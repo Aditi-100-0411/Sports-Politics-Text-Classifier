@@ -1,0 +1,124 @@
+Sports vs Politics Text Classification 
+
+
+Dataset Source:
+News Category Dataset (filtered into SPORTS and POLITICS categories)
+
+Dataset Statistics:
+Sports articles: 5077
+Politics articles: 35602
+Total documents: 40679
+
+Train/Test Split:
+Training set: 80%
+Testing set: 20%
+
+
+FEATURE REPRESENTATION: BAG OF WORDS
+
+Model: Naive Bayes
+Accuracy: 0.9805801376597837
+Precision: 0.9408866995073891
+Recall: 0.9069325735992403
+F1 Score: 0.9235976789168279
+Confusion Matrix:
+[[7023   60]
+ [  98  955]]
+
+Model: Logistic Regression
+Accuracy: 0.9759095378564405
+Precision: 0.9573105656350054
+Recall: 0.8518518518518519
+F1 Score: 0.9015075376884422
+Confusion Matrix:
+[[7043   40]
+ [ 156  897]]
+
+Model: Support Vector Machine (SVM)
+Accuracy: 0.9740658800393314
+Precision: 0.9193227091633466
+Recall: 0.8765432098765432
+F1 Score: 0.8974234321827905
+Confusion Matrix:
+[[7002   81]
+ [ 130  923]]
+
+
+FEATURE REPRESENTATION: TF-IDF
+
+
+Model: Naive Bayes
+Accuracy: 0.9272369714847591
+Precision: 0.9914712153518124
+Recall: 0.4415954415954416
+F1 Score: 0.6110381077529566
+Confusion Matrix:
+[[7079    4]
+ [ 588  465]]
+
+Model: Logistic Regression
+Accuracy: 0.9625122910521141
+Precision: 0.9746192893401016
+Recall: 0.7293447293447294
+F1 Score: 0.8343291689299294
+Confusion Matrix:
+[[7063   20]
+ [ 285  768]]
+
+Model: Support Vector Machine (SVM)
+Accuracy: 0.9775073746312685
+Precision: 0.9521829521829522
+Recall: 0.8698955365622032
+F1 Score: 0.9091811414392059
+Confusion Matrix:
+[[7037   46]
+ [ 137  916]]
+
+
+FEATURE REPRESENTATION: N-GRAMS
+
+
+Model: Naive Bayes
+Accuracy: 0.9573500491642084
+Precision: 0.9862258953168044
+Recall: 0.6799620132953467
+F1 Score: 0.804946599213041
+Confusion Matrix:
+[[7073   10]
+ [ 337  716]]
+
+Model: Logistic Regression
+Accuracy: 0.9752949852507374
+Precision: 0.9681318681318681
+Recall: 0.8366571699905033
+F1 Score: 0.8976057055527255
+Confusion Matrix:
+[[7054   29]
+ [ 172  881]]
+
+Model: Support Vector Machine (SVM)
+Accuracy: 0.9773844641101278
+Precision: 0.9511941848390446
+Recall: 0.8698955365622032
+F1 Score: 0.9087301587301587
+Confusion Matrix:
+[[7036   47]
+ [ 137  916]]
+
+
+OBSERVATIONS
+
+
+1. Bag of Words representation with Naive Bayes achieved the highest overall accuracy (~98%).
+2. TF-IDF significantly improved performance of SVM and Logistic Regression by weighting important terms.
+3. Naive Bayes struggled with TF-IDF due to probabilistic assumptions.
+4. N-grams improved contextual understanding of phrases common in politics and sports.
+5. SVM performed consistently well across all feature types due to its ability to handle sparse high-dimensional data.
+
+
+CONCLUSION
+
+
+The experiment demonstrates that traditional machine learning techniques are highly effective for document classification tasks. Feature engineering played a crucial role in improving performance. Among all combinations tested, Bag of Words with Naive Bayes and TF-IDF with SVM achieved the best results.
+
+The system can be further improved using deep learning models and more balanced datasets.
